@@ -21,9 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result->fetch_assoc();
 
     if (($result->num_rows) > 0) {
-        $_SESSION['username'] = $row["username"];
+        $_SESSION['userName'] = $row["username"];
         $_SESSION['userType'] = $row["userType"];
-        header("location: ../userDash.php");
+        if ($_SESSION['userType'] == 'admin'){
+            header("location: ../adminDash.php");
+        }
+        else{
+            header("location: ../userDash.php");
+        }
+        
     }
     else {
         session_destroy();

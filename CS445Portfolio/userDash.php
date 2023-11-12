@@ -40,6 +40,9 @@ session_start();
     <a href="tipsAndTricks.php">
         <button>Tips/Tricks</button>
     </a>
+    <a href="managePortfolioForm.php">
+        <button>ManagePorts</button>
+    </a>
 </body>
 
 </html>

@@ -1,10 +1,3 @@
-<?php
-    if (isset($_GET['loginFailed'])) {
-        $message = "Invalid Credentials ! Please try again.";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>

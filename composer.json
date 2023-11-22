@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "classmap": [
+            "CS445Portfolio/src/",  
+            "CS445Portfolio/test/" 
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    }
+}

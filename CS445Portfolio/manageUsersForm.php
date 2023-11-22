@@ -14,7 +14,7 @@
 
         <div class="flex-container">
             <div class="flex-item-1">
-                <form action="./DB/loginDB.php" method="post">
+                <form action="./DB/manageUsersDB.php" method="post">
                     <div class="flex-item-login">
                         <h2>Change Email</h2>
                     </div>
@@ -32,7 +32,19 @@
                         
                     </div>
                 </form>
-                <a href="manageUsersForm.php"><button>UpdateEmail</button></a>
+                <form action="./DB/manageUsersDB.php" method="post">
+                    <div class="flex-item-login">
+                        <h2>Delete User</h2>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="text" name="user_uname" placeholder="User to Delete" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <button type="submit">Delete Mother Fucker</button>
+                    </div>
+                </form>
             </div>
         </div>
 

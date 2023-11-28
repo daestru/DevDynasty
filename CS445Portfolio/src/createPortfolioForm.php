@@ -21,7 +21,7 @@
 
         <div class="flex-container">
             <div class="flex-item-1">
-                <form action="./DB/createuserDB.php" method="post">
+                <form action="./DB/createPortfolioDB.php" method="post">
                     <div class="flex-item-login">
                         <h2>Welcome</h2>
                     </div>

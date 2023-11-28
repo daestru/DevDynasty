@@ -23,23 +23,31 @@
             <div class="flex-item-1">
                 <form action="./DB/createPortfolioDB.php" method="post">
                     <div class="flex-item-login">
-                        <h2>Welcome</h2>
+                        <h2>Please input data</h2>
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="user_uname" placeholder="Enter your Username" required>
+                        <input type="text" name="firstlastname" placeholder="Enter your first and last name" required>
                     </div>
 
                     <div class="flex-item">
-                        <input type="password" name="user_psw" placeholder="Enter your Password" required>
+                        <input type="text" name="expierence" placeholder="Enter your past work expierence" required>
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="email" placeholder="Enter your Email" required>
+                        <input type="password" name="skills" placeholder="Enter your skills" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="text" name="education" placeholder="Enter your education" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="text" name="certs_license" placeholder="Enter any certificates and licenses" required>
                     </div>
                     
                     <div class="flex-item">
-                        <button type="submit">Sign Up</button>
+                        <button type="submit">Submit</button>
                     </div>
                 </form>
             </div>

@@ -74,7 +74,7 @@ $portfolios = getAllPortfolios();
     <?php
         foreach ($portfolios as $portfolio) {
             $destination = $portfolio->getTemplateSelection() . ".php";
-            echo '<form action="'.$destination.'" method="post">';
+            echo '<form action="./Templates/'.$destination.'" method="post">';
             echo '<button type="submit" name="portfolio" value="' . base64_encode(serialize($portfolio)) . '">' . $portfolio->getName() . '</button>';
             echo '</form>';
         }

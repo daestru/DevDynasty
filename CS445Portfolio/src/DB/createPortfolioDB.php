@@ -21,22 +21,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $firstLastName = mysqli_real_escape_string($conn, $_POST["firstlastname"]);
   $experience = mysqli_real_escape_string($conn, $_POST["expierence"]);
   $skills = mysqli_real_escape_string($conn, $_POST["skills"]);
-  $education = mysqli_real_escape_string($conn, $_POST["education"]);
-  $certsLicense = mysqli_real_escape_string($conn, $_POST["certs_license"]);
+  $education = mysqli_real_escape_string($conn, $_POST["description"]);
+  $certsLicense = mysqli_real_escape_string($conn, $_POST["templateSelection"]);
 
   // Insert data into the resume_data table
   $sql = "INSERT INTO resume_data (full_name, experience, skills, education, certs_license) 
-          VALUES ('$firstLastName', '$experience', '$skills', '$education', '$certsLicense')";
+          VALUES ('$firstLastName', '$experience', '$skills', '$description', '$templateSelection')";
 
-  if ($conn->query($sql) === TRUE) {
-    // Data inserted successfully
-    header("location: ../successPage.php");
-  } else {
-    // Error handling, redirect to an error page or display an error message
-    header("location: ../errorPage.php");
+if ($conn->query($sql0) === TRUE){
+  if($conn->query($sql1) === TRUE){
+      header("location: ../loginForm.php");
   }
+}
+}
+
+else{
+header("location: ../createuserForm.php?duplicateFail=true");
+}
 
   // Close the database connection
   $conn->close();
-}
 ?>

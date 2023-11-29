@@ -5,6 +5,8 @@
 </head>
 
 <body>
+    <h1>Tips and Tricks</h1>
+    
     <p>1. Provide compelling facts that highlight your key skills and achievements.</p>
     <p>2. Provide specific, individual job-related details.</p>
     <p>3. Utilize metrics to your advantage. Objective results speak louder than subjective "filler" information.</p>

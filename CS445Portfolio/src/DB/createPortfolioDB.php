@@ -19,33 +19,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  if (isset($_SESSION['userName'])) {
-    // Display the userName
-    echo '<p>Welcome admin, ' . $_SESSION['userName'] . '!</p>';
-} 
 
   // Retrieve data from the form submission
   $firstLastName = mysqli_real_escape_string($conn, $_POST["firstlastname"]);
-  $experience = mysqli_real_escape_string($conn, $_POST["expierence"]);
+  $experience = mysqli_real_escape_string($conn, $_POST["experience"]);
   $skills = mysqli_real_escape_string($conn, $_POST["skills"]);
-  $education = mysqli_real_escape_string($conn, $_POST["description"]);
-  $certsLicense = mysqli_real_escape_string($conn, $_POST["templateSelection"]);
+  $description = mysqli_real_escape_string($conn, $_POST["description"]);
+  $templateSelection = mysqli_real_escape_string($conn, $_POST["templateSelection"]);
 
   // Insert data into the resume_data table
   $sql = "INSERT INTO cs445portfolio.portfolio . $username . (full_name, experience, skills, education, certs_license) 
           VALUES ('$firstLastName', '$experience', '$skills', '$description', '$templateSelection')";
 
-if ($conn->query($sql0) === TRUE){
-  if($conn->query($sql1) === TRUE){
-      header("location: ../loginForm.php");
-  }
+if ($conn->query($sql) === TRUE){
+  header("location: ../userDash.php");
 }
 }
 
-else{
-header("location: ../createuserForm.php?duplicateFail=true");
-}
+$conn->close();
 
-  // Close the database connection
-  $conn->close();
+
+  
 ?>

@@ -2,6 +2,8 @@
 /*
   Insert the data obtained from the previous form into the correct database
 */
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Database connection details
   $host = "localhost";
@@ -17,6 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Connection failed: " . $conn->connect_error);
   }
 
+  if (isset($_SESSION['userName'])) {
+    // Display the userName
+    echo '<p>Welcome admin, ' . $_SESSION['userName'] . '!</p>';
+} 
+
   // Retrieve data from the form submission
   $firstLastName = mysqli_real_escape_string($conn, $_POST["firstlastname"]);
   $experience = mysqli_real_escape_string($conn, $_POST["expierence"]);
@@ -25,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $certsLicense = mysqli_real_escape_string($conn, $_POST["templateSelection"]);
 
   // Insert data into the resume_data table
-  $sql = "INSERT INTO resume_data (full_name, experience, skills, education, certs_license) 
+  $sql = "INSERT INTO cs445portfolio.portfolio . $username . (full_name, experience, skills, education, certs_license) 
           VALUES ('$firstLastName', '$experience', '$skills', '$description', '$templateSelection')";
 
 if ($conn->query($sql0) === TRUE){

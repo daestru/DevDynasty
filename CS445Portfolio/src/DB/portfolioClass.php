@@ -7,7 +7,7 @@ class Portfolio {
     private $templateSelection;
     private $experience;
 
-    public function __construct($portfolioID, $name, $description, $skills, $templateSelection, $experience) {
+    public function __construct($portfolioID, $name, $description, $skills, $experience, $templateSelection) {
         $this->portfolioID = $portfolioID;
         $this->name = $name;
         $this->description = $description;

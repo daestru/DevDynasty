@@ -86,6 +86,9 @@ $portfolios = getAllPortfolios();
     <a href="managePortfolioForm.php">
         <button>ManagePorts</button>
     </a>
+    <a href="createPortfolioForm.php">
+        <button>Create Portfolio</button>
+    </a>
 </body>
 
 </html>

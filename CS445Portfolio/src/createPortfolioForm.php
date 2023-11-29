@@ -39,11 +39,11 @@
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="education" placeholder="Enter your education" required>
+                        <input type="text" name="description" placeholder="Enter a brief description" required>
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="certs_license" placeholder="Enter any certificates and licenses" required>
+                        <input type="text" name="templateSelection" placeholder="Enter template ID you want to use" required>
                     </div>
                     
                     <div class="flex-item">

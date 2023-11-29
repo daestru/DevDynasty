@@ -1,7 +1,41 @@
 <?php
 // Start the session
-session_start();
+    
+    if(!isset($_SESSION)) {
+        session_start();
+    }
 
+// Include the file with the Portfolio class and any database connection code
+include './DB/portfolioClass.php';
+function getAllPortfolios() {
+    // Add your database connection code here
+    // Example: $conn = mysqli_connect("localhost", "username", "password", "database");
+    $host = "localhost";
+    $username = "cs445";
+    $password = "pass";
+    $database = "cs445portfolio";
+
+    $conn = new mysqli($host, $username, $password, $database);
+    // Query to get all portfolios from the database
+    $query = "SELECT * FROM portfolio" . $_SESSION['userName']; // Replace your_table_name with the actual table name
+    $result = mysqli_query($conn, $query);
+
+    $portfolios = [];
+
+    // Create Portfolio objects for each row
+    while ($row = mysqli_fetch_assoc($result)) {
+        $portfolio = new Portfolio($row['portfolioID'], $row['name'], $row['description'], $row['skills'], $row['experience'], $row['templateSelection']); // Adjust these based on your table structure
+        $portfolios[] = $portfolio;
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    return $portfolios;
+}
+
+// Get all portfolios from the database
+$portfolios = getAllPortfolios();
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +70,15 @@ session_start();
         }
         ?>
     </main>
+
+    <?php
+        foreach ($portfolios as $portfolio) {
+            $destination = $portfolio->getTemplateSelection() . ".php";
+            echo '<form action="'.$destination.'" method="post">';
+            echo '<button type="submit" name="portfolio" value="' . base64_encode(serialize($portfolio)) . '">' . $portfolio->getName() . '</button>';
+            echo '</form>';
+        }
+        ?>
 
     <a href="tipsAndTricks.php">
         <button>Tips/Tricks</button>

@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="flex-item">
-                        <input type="password" name="skills" placeholder="Enter your skills" required>
+                        <input type="text" name="skills" placeholder="Enter your skills" required>
                     </div>
 
                     <div class="flex-item">

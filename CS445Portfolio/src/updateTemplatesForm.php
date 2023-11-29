@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="flex-item">
-                        <button type="submit">Delete Mother Fucker</button>
+                        <button type="submit">Delete User</button>
                     </div>
                 </form>
             </div>

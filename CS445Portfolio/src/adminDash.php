@@ -28,7 +28,6 @@ session_start();
         if (isset($_SESSION['userName'])) {
             // Display the userName
             echo '<p>Welcome admin, ' . $_SESSION['userName'] . '!</p>';
-            echo '<p>User Type: ' . $_SESSION['userType'];
         } 
         else {
             // If the userName is not set, you can redirect the user to the login page or take appropriate action
@@ -36,6 +35,13 @@ session_start();
         }
         ?>
     </main>
+
+    <a href="manageUsersForm.php">
+        <button>Manage Users</button>
+    </a>
+    <a href="updateTemplatesForm.php">
+        <button>Update Templates</button>
+    </a>
 
 </body>
 

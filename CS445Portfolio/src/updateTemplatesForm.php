@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="flex-item">
-                        <button type="submit">Delete User</button>
+                        <button type="submit">Delete Template</button>
                     </div>
                 </form>
             </div>

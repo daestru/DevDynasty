@@ -62,7 +62,6 @@ $portfolios = getAllPortfolios();
         if (isset($_SESSION['userName'])) {
             // Display the userName
             echo '<p>Welcome user, ' . $_SESSION['userName'] . '!</p>';
-            echo '<p>User Type: ' . $_SESSION['userType'];
         } 
         else {
             // If the userName is not set, you can redirect the user to the login page or take appropriate action

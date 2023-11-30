@@ -1,3 +1,7 @@
+<?php
+    include "./DB/portfolioClass.php";
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -12,10 +16,21 @@
                 <h1 id="form_header">Create your resume!</h1>
             </div>
         </div>
-
+    <?php
+        // Check if the form is submitted
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Check if a serialized "portfolio" object is posted
+            if (isset($_POST['portfolio'])) {
+                // Unserialize the posted data and save it to $portfolio
+                $serializedPortfolio = $_POST['portfolio'];
+                $portfolio = unserialize(base64_decode($serializedPortfolio));
+                $portfolioID = $portfolio->getPortfolioID();
+            }
+        }
+    ?>            
         <div class="flex-container">
             <div class="flex-item-1">
-                <form action="./DB/createPortfolioDB.php" method="post">
+                <form action="./DB/managePortfolioDB.php" method="post">
                     <div class="flex-item-login">
                         <h2>Please input data</h2>
                     </div>
@@ -40,6 +55,7 @@
                         <input type="text" name="templateSelection" placeholder="Enter template ID you want to use" required>
                     </div>
                     
+                    <input type="hidden" name="portfolioID" value="<?php echo $portfolioID; ?>">
                     <div class="flex-item">
                         <button type="submit">Submit</button>
                     </div>

@@ -36,10 +36,20 @@
                         <input type="text" name="description" placeholder="Enter a brief description" required>
                     </div>
 
-                    <div class="flex-item">
-                        <input type="text" name="templateSelection" placeholder="Enter template ID you want to use" required>
-                    </div>
+                    <script>
+                    function selectTemplate(templateNumber) {
+                        document.getElementById('templateSelection').value = templateNumber;
+                    }
+                    </script>
+
                     
+                    <div class="flex-item">
+                        <p>Select a template:</p>
+                        <a href="#" onclick="selectTemplate(1)"><img src="./Templates/Gandhi.jpg" alt="Template 1"></a>
+                        <a href="#" onclick="selectTemplate(2)"><img src="./Templates/Tyson.png" alt="Template 2"></a>
+                        <a href="#" onclick="selectTemplate(3)"><img src="./Templates/3.png" alt="Template 3"></a>
+                    </div>
+                    <input type="hidden" name="templateSelection" id="templateSelection" value="-1" required>
                     <div class="flex-item">
                         <button type="submit">Submit</button>
                     </div>

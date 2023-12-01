@@ -45,6 +45,9 @@
                         <button type="submit">Delete User</button>
                     </div>
                 </form>
+                <a href="./adminDash.php">
+                    <button>Dashboard</button>
+                </a>
             </div>
         </div>
 

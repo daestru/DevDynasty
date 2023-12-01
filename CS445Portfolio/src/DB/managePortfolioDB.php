@@ -3,7 +3,6 @@
 include "./portfolioClass.php";
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Check if the userName session variable is set
   if (!isset($_SESSION['userName'])) {
     header("Location: ../loginForm.php");
     exit();

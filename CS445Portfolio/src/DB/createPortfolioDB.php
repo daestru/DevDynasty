@@ -1,7 +1,5 @@
 <?php
-/*
-  Insert the data obtained from the previous form into the correct database
-*/
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

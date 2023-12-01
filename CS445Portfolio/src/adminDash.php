@@ -1,5 +1,4 @@
 <?php
-// Start the session
 session_start();
 
 ?>
@@ -15,22 +14,14 @@ session_start();
 </head>
 
 <body>
-    <header>
-        <!-- Header content (e.g., logo, navigation) -->
-    </header>
 
     <main class="content">
-        <!-- Main content section -->
-        <!-- Charts, tables, statistics, etc. -->
 
         <?php
-        // Check if the userName session variable is set
         if (isset($_SESSION['userName'])) {
-            // Display the userName
             echo '<p>Welcome admin, ' . $_SESSION['userName'] . '!</p>';
         } 
         else {
-            // If the userName is not set, you can redirect the user to the login page or take appropriate action
             echo '<p>Session username not set. Please log in.</p>';
         }
         ?>
@@ -42,7 +33,9 @@ session_start();
     <a href="updateTemplatesForm.php">
         <button>Update Templates</button>
     </a>
-
+    <a href="./DB/logoutDB.php">
+        <button>Logout</button>
+    </a>
 </body>
 
 </html>

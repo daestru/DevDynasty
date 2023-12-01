@@ -11,15 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = "pass";
   $database = "cs445portfolio";
 
-  // Create a connection to the database
   $conn = new mysqli($host, $username, $password, $database);
 
-  // Check the connection
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  // Check if the userName session variable is set
 if (!isset($_SESSION['userName'])) {
     header("Location: ../loginForm.php");
     exit();

@@ -69,6 +69,9 @@
                         <button type="submit">Submit</button>
                     </div>
                 </form>
+                <a href="./userDash.php">
+                    <button>Dashboard</button>
+                </a>
             </div>
         </div>
 

@@ -1,7 +1,6 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection details
     $host = "localhost";
     $username = "cs445";
     $password = "pass";

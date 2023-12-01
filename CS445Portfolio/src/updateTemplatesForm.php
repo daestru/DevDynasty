@@ -49,6 +49,10 @@
                         <button type="submit">Delete Template</button>
                     </div>
                 </form>
+
+                <a href="./AdminDash.php">
+                    <button>Dashboard</button>
+                </a>
             </div>
         </div>
 

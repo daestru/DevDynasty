@@ -15,6 +15,9 @@
     <p>6. Proofread carefully. Grammar/spelling mistakes are an instant red flag.</p>
     <p>7. Include current, professional, and accurate contact information.</p>
 
+    <a href="./userDash.php">
+        <button>Dashboard</button>
+    </a>
 </body>
 </html>
 

@@ -39,6 +39,7 @@ $portfolios = getAllPortfolios();
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -56,6 +57,8 @@ $portfolios = getAllPortfolios();
         }
         ?>
     </main>
+
+    <div class="button-container">
 
     <?php
         foreach ($portfolios as $portfolio) {
@@ -78,6 +81,7 @@ $portfolios = getAllPortfolios();
     <a href="./DB/logoutDB.php">
         <button>Logout</button>
     </a>
+    </div>
 </body>
 
 </html>

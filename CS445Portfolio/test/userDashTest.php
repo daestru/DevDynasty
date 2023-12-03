@@ -25,7 +25,7 @@ class userDashTest extends TestCase
         // Include your PHP file
         require_once __DIR__ . '/../src/userDash.php';
 
-        // Get the output buffer (what is displayed on the page)
+        // Get the output buffer
         $output = ob_get_clean();
 
         // Normalize both expected and actual strings

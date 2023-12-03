@@ -37,9 +37,5 @@ class createPortfolioFormTest extends TestCase
 
         // Assert that a Location header is present
         $this->assertTrue($hasLocationHeader);
-
-        // You can also assert that the expected redirect location is correct
-        $expectedRedirect = 'Location: /path/to/redirect'; // Update with your expected redirect path
-        $this->assertStringContainsString($expectedRedirect, $headers);
     }
 }

@@ -4,6 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 class userDashTest extends TestCase
 {
+
+    private function normalizeString($str)
+    {
+        // Trim whitespace and replace multiple spaces with a single space
+        return preg_replace('/\s+/', ' ', trim($str));
+    }
     public function testSessionVariableSet()
     {
         // Start the session for testing
@@ -13,16 +19,27 @@ class userDashTest extends TestCase
         $_SESSION['userName'] = 'TestUser';
         $_SESSION['userType'] = 'Admin';
 
+        // Use output buffering to capture the output of the included file
+        ob_start();
+
         // Include your PHP file
-        require_once 'userDash.php';
+        require_once __DIR__ . '/../src/userDash.php';
 
         // Get the output buffer (what is displayed on the page)
         $output = ob_get_clean();
 
+        // Normalize both expected and actual strings
+        $output = $this->normalizeString($output);
+        $expected = $this->normalizeString('
+            <p>Welcome user, TestUser!</p>
+        ');
+
+        var_dump('Expected: ' . $expected);
+        var_dump('Actual: ' . $output);
         // Assert that the session variables are displayed on the page
-        $this->assertStringContainsString('Welcome user, TestUser!', $output);
-        $this->assertStringContainsString('User Type: Admin', $output);
+        $this->assertEquals($expected, $output);
     }
+    
 
     public function testSessionVariableNotSet()
     {
@@ -33,13 +50,26 @@ class userDashTest extends TestCase
         unset($_SESSION['userName']);
         unset($_SESSION['userType']);
 
+        // Use output buffering to capture the output of the included file
+        ob_start();
+
         // Include your PHP file
-        require_once 'userDash.php';
+        require_once __DIR__ . '/../src/userDash.php';
 
         // Get the output buffer (what is displayed on the page)
         $output = ob_get_clean();
 
+        // Clean up whitespace and convert to lowercase for comparison
+         // Normalize both expected and actual strings
+         $output = $this->normalizeString($output);
+         $expected = $this->normalizeString('
+             <p>Session username not set. Please log in.</p>
+         ');
+
+         var_dump('Expected: ' . $expected);
+         var_dump('Actual: ' . $output);
         // Assert that the session variable not set message is displayed on the page
-        $this->assertStringContainsString('Session username not set. Please log in.', $output);
+        $this->assertEquals($expected, $output);
+    
     }
 }

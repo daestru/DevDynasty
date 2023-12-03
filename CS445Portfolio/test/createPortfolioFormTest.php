@@ -1,0 +1,45 @@
+<?php
+
+use PHPUnit\Framework\TestCase;
+
+class createPortfolioFormTest extends TestCase
+
+{
+    public function testFormSubmission()
+    {
+        // Simulate form data
+        $formData = [
+            'firstlastname' => 'test',
+            'experience' => 'testexp',
+            'skills' => 'testskill',
+            'description' => 'testdesc',
+            'templateSelection' => 'testtemp',
+        ];
+
+        // Simulate POST request
+        $_POST = $formData;
+
+        // Start output buffering to capture the output of the included PHP file
+        ob_start();
+        include './DB/createPortfolioDB.php';
+        $output = ob_get_clean();
+
+        // Check for a redirect header
+        $headers = headers_list();
+        $hasLocationHeader = false;
+
+        foreach ($headers as $header) {
+            if (stripos($header, 'Location:') !== false) {
+                $hasLocationHeader = true;
+                break;
+            }
+        }
+
+        // Assert that a Location header is present
+        $this->assertTrue($hasLocationHeader);
+
+        // You can also assert that the expected redirect location is correct
+        $expectedRedirect = 'Location: /path/to/redirect'; // Update with your expected redirect path
+        $this->assertStringContainsString($expectedRedirect, $headers);
+    }
+}

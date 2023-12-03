@@ -9,11 +9,11 @@ class createPortfolioFormTest extends TestCase
     {
         // Simulate form data
         $formData = [
-            'firstlastname' => 'test',
-            'experience' => 'testexp',
-            'skills' => 'testskill',
-            'description' => 'testdesc',
-            'templateSelection' => 'testtemp',
+            'firstlastname' => 'John Doe',
+            'experience' => 'Web Developer',
+            'skills' => 'PHP, HTML, CSS',
+            'description' => 'Experienced web developer',
+            'templateSelection' => '2',
         ];
 
         // Simulate POST request

@@ -30,8 +30,8 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
+            background-color: #fff; /* Black background */
+            color: #000; /* White text */
             margin: 20px;
         }
 
@@ -43,7 +43,7 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
         }
 
         h2 {
-            color: #fff; /* White text for section headers */
+            color: #fff; 
         }
 
         p {

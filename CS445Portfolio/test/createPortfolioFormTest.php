@@ -36,6 +36,7 @@ class createPortfolioFormTest extends TestCase
         }
 
         // Assert that a Location header is present
-        $this->assertTrue($hasLocationHeader);
+      $this->assertTrue($hasLocationHeader);
+
     }
 }

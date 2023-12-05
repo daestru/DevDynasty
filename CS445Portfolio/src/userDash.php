@@ -17,6 +17,7 @@
     <main class="content">
 
         <?php
+        session_start();
         if (isset($_SESSION['userName'])) {
             echo '<p>Welcome user, ' . $_SESSION['userName'] . '!</p>';
         } 

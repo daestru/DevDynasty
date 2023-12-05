@@ -23,6 +23,7 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,19 +31,25 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* White background */
-            color: #000; /* Black text */
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark gray text */
             margin: 10px;
         }
 
         .resume-section {
-            padding: 10px;
-            margin-bottom: 10px;
-            
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff; /* White background */
+            border-radius: 5px; /* Rounded corners for sections */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for sections */
         }
 
         h2 {
-            color: #fff; 
+            color: #333;
+            background-color: #ddd; /* Light gray background for section titles */
+            padding: 10px; /* Add padding for better appearance */
+            margin: 0; /* Remove margin to make titles flush with the section */
+            border-radius: 5px 5px 0 0; /* Rounded corners for top of titles */
         }
 
         p {
@@ -50,25 +57,26 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
         }
     </style>
 </head>
+
 <body>
 
 <div class="resume-section">
-<h2><strong>Name:</strong></h2>
+    <h2>Name</h2>
     <p><?php echo $portfolio->getName(); ?></p>
 </div>
 
 <div class="resume-section">
-<h2><strong>Description:</strong></h2>
+    <h2>Description</h2>
     <p><?php echo $portfolio->getDescription(); ?></p>
 </div>
 
 <div class="resume-section">
-<h2><strong>Skills:</strong></h2>
+    <h2>Skills</h2>
     <p><?php echo $portfolio->getSkills(); ?></p>
 </div>
 
 <div class="resume-section">
-<h2><strong>Experience:</strong></h2>
+    <h2>Experience</h2>
     <p><?php echo $portfolio->getExperience(); ?></p>
 </div>
 

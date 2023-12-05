@@ -10,8 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <!-- Include necessary CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 
 <body>

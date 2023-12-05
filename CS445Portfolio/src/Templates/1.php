@@ -15,10 +15,6 @@ $serializedPortfolio = $_POST['portfolio'];
 $portfolio = unserialize(base64_decode($serializedPortfolio));
 
 
-echo "<p>Name: " . $portfolio->getName() . "</p>";
-echo "<p>Description: " . $portfolio->getDescription(). "</p>";
-echo "<p>Skills: " . $portfolio->getSkills() . "</p>";
-echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
 ?>
 
 <!DOCTYPE html>

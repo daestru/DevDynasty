@@ -30,8 +30,8 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* Black background */
-            color: #000; /* White text */
+            background-color: #fff; /* White background */
+            color: #000; /* Black text */
             margin: 10px;
         }
 
@@ -53,22 +53,22 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
 <body>
 
 <div class="resume-section">
-    <h2>Name</h2>
+<h2><strong>Name:</strong></h2>
     <p><?php echo $portfolio->getName(); ?></p>
 </div>
 
 <div class="resume-section">
-    <h2>Description</h2>
+<h2><strong>Description:</strong></h2>
     <p><?php echo $portfolio->getDescription(); ?></p>
 </div>
 
 <div class="resume-section">
-    <h2>Skills</h2>
+<h2><strong>Skills:</strong></h2>
     <p><?php echo $portfolio->getSkills(); ?></p>
 </div>
 
 <div class="resume-section">
-    <h2>Experience</h2>
+<h2><strong>Experience:</strong></h2>
     <p><?php echo $portfolio->getExperience(); ?></p>
 </div>
 

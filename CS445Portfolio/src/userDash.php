@@ -1,36 +1,4 @@
-<?php
-// Start the session
-    
-    if(!isset($_SESSION)) {
-        session_start();
-    }
 
-
-include './DB/portfolioClass.php';
-function getAllPortfolios() {
-    $host = "localhost";
-    $username = "cs445";
-    $password = "pass";
-    $database = "cs445portfolio";
-
-    $conn = new mysqli($host, $username, $password, $database);
-    $query = "SELECT * FROM portfolio" . $_SESSION['userName']; 
-    $result = mysqli_query($conn, $query);
-
-    $portfolios = [];
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $portfolio = new Portfolio($row['portfolioID'], $row['name'], $row['description'], $row['skills'], $row['experience'], $row['templateSelection']); // Adjust these based on your table structure
-        $portfolios[] = $portfolio;
-    }
-
-    mysqli_close($conn);
-
-    return $portfolios;
-}
-
-$portfolios = getAllPortfolios();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,14 +28,6 @@ $portfolios = getAllPortfolios();
 
     <div class="button-container">
 
-    <?php
-        foreach ($portfolios as $portfolio) {
-            $destination = $portfolio->getTemplateSelection() . ".php";
-            echo '<form action="./Templates/'.$destination.'" method="post">';
-            echo '<button type="submit" name="portfolio" value="' . base64_encode(serialize($portfolio)) . '">' . $portfolio->getName() . '</button>';
-            echo '</form>';
-        }
-        ?>
 
     <a href="tipsAndTricks.php">
         <button>Tips/Tricks</button>

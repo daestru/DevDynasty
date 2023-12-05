@@ -57,8 +57,11 @@ $portfolios = getAllPortfolios();
     <?php
         foreach ($portfolios as $portfolio) {
             $destination = $portfolio->getTemplateSelection() . ".php";
-            echo '<form action="./managePortfolioInfo.php" method="post">';
+            echo '<form action="./Templates/'.$destination.'" method="post">';
             echo '<button type="submit" name="portfolio" value="' . base64_encode(serialize($portfolio)) . '">' . $portfolio->getName() . '</button>';
+            echo '</form>';
+            echo '<form action="./managePortfolioInfo.php" method="post">';
+            echo '<button type="submit" name="portfolio" value="' . base64_encode(serialize($portfolio)) . '"> Edit </button>';
             echo '</form>';
             echo '<form action="./DB/deletePortfolioDB.php" method="post">';
             echo '<button type="submit" name="portfolioDelete" value="' . base64_encode(serialize($portfolio)) . '"> Delete </button>';

@@ -164,6 +164,6 @@ a button:hover {
 
 /* Set a max-width and max-height for the template images */
 .flex-item a img {
-    max-width: 100px; /* Adjust as needed */
-    max-height: 100px; /* Adjust as needed */
+    max-width: 400px; /* Adjust as needed */
+    max-height: 300px; /* Adjust as needed */
 }

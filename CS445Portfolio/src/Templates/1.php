@@ -32,14 +32,13 @@ echo "<p>Experience: " . $portfolio->getExperience() . "</p>";
             font-family: Arial, sans-serif;
             background-color: #fff; /* Black background */
             color: #000; /* White text */
-            margin: 20px;
+            margin: 10px;
         }
 
         .resume-section {
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+            
         }
 
         h2 {

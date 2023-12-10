@@ -25,6 +25,11 @@
                 $serializedPortfolio = $_POST['portfolio'];
                 $portfolio = unserialize(base64_decode($serializedPortfolio));
                 $portfolioID = $portfolio->getPortfolioID();
+                $oldName = $portfolio->getName();
+                $oldDescription = $portfolio->getDescription();
+                $oldSkills = $portfolio->getSkills();
+                $oldExperience = $portfolio->getExperience();
+                $oldTemplateSelection = $portfolio-> getTemplateSelection();
             }
         }
     ?>            
@@ -36,19 +41,19 @@
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="firstlastname" placeholder="Enter your first and last name" required>
+                        <input type="text" name="firstlastname" placeholder="Enter your first and last name" value = "<?php echo $oldName ?>" required>
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="experience" placeholder="Enter your past work expierence" required>
+                        <input type="text" name="experience" placeholder="Enter your past work expierence" value = "<?php echo $oldExperience ?>" required>
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="skills" placeholder="Enter your skills" required>
+                        <input type="text" name="skills" placeholder="Enter your skills" value = "<?php echo $oldSkills ?>" required>
                     </div>
 
                     <div class="flex-item">
-                        <input type="text" name="description" placeholder="Enter a brief description" required>
+                        <input type="text" name="description" placeholder="Enter a brief description" value = "<?php echo $oldDescription ?>" required>
                     </div>
                     <input type="hidden" name="portfolioID" value="<?php echo $portfolioID; ?>">
                     <script>
@@ -64,7 +69,7 @@
                         <a href="#" onclick="selectTemplate(2)"><img src="./Templates/Tyson.png" alt="Template 2"></a>
                         <a href="#" onclick="selectTemplate(3)"><img src="./Templates/3.png" alt="Template 3"></a>
                     </div>
-                    <input type="hidden" name="templateSelection" id="templateSelection" value="-1" required>
+                    <input type="hidden" name="templateSelection" id="templateSelection" value="<?php echo $oldTemplateSelection ?>" required>
                     <div class="flex-item">
                         <button type="submit">Submit</button>
                     </div>

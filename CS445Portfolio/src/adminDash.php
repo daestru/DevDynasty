@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_SESSION['userName'])) {
+      header("Location: ../loginForm.php");
+      exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +15,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <!-- Include necessary CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>

@@ -1,0 +1,169 @@
+/* Define custom color variables */
+:root {
+    --background-color: #68ddee;
+    --button-color: #68a2e5;
+    --button-hover-color: #53c1f0;
+    --other-color: #897fca;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: #333; /* Dark gray link color */
+}
+
+a:hover {
+    color: #555; /* Slightly darker gray on hover */
+}
+
+/* loginForm*/
+.flex-container-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.flex-item-0 {
+    text-align: center;
+}
+
+#form_header {
+    color: #333; 
+}
+
+.flex-item-1 {
+    background-color: var(--other-color); 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+}
+
+.flex-item-login {
+    text-align: center;
+}
+
+.flex-item {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #61fbd5; 
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--button-color);
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+a {
+    text-decoration: none;
+    color: #333; /* Dark gray link color */
+}
+
+a:hover {
+    color: #555; 
+}
+/*user dash*/
+header {
+    background-color: var(--background-color); /* Light blue background color for the header */
+    padding: 10px;
+}
+
+.content {
+    text-align: center; /* Center-align the content */
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 300px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    box-sizing: border-box;
+    background-color: var(--button-color);
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Portfolio button styles */
+button {
+    width: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--button-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Delete button styles */
+button[name="portfolioDelete"] {
+    background-color: #d9534f; /* Red color for delete button */
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+/* create portfolio form */ 
+a button {
+    background-color: var(--button-color);
+}
+
+a button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.flex-item a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Set a max-width and max-height for the template images */
+.flex-item a img {
+    max-width: 400px; /* Adjust as needed */
+    max-height: 300px; /* Adjust as needed */
+}
